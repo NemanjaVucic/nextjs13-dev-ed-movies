@@ -1,4 +1,17 @@
 import "styles/globals.css";
+import { Montserrat, Aboreto } from "@next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-montserrat",
+});
+
+const aboreto = Aboreto({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-aboreto",
+});
 
 export default function RootLayout({ children }) {
   return (
@@ -9,20 +22,7 @@ export default function RootLayout({ children }) {
       */}
       <head />
 
-      <body>
-        <nav>
-          <h1>Logo</h1>
-          <ul>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Sign up</a>
-            </li>
-          </ul>
-        </nav>
-        {children}
-      </body>
+      <body className={`${montserrat.className} mx-32 my-12`}>{children}</body>
     </html>
   );
 }
